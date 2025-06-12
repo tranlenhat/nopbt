@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo form</title>
+    <style>
+        #id1{
+            background-color: red;
+        }
+        .form1{
+            width: 500px;
+            height: 300px;
+            background-color: bisque;
+            padding: 30px;
+        }
+    </style>
+
+</head>
+<body>
+<form >
+    fsfsf
+</form>
+<form action="#" method="get" class="form1" >
+    <h1 style="color: red; text-align: center">Thông tin</h1>
+    <span>ID</span>
+    <input type="text" name="id" id="id1" style="margin-left: 45px;margin-bottom: 5px"><br>
+    <label for="name">Name</label>
+    <input name="name" id="name" style="margin-left: 24px"><br>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password"><br>
+    <label>Birthday</label>
+    <input type="date"><br>
+    <label>Gender</label>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female<br>
+    <label>Hobbies</label>
+    <input type="checkbox" name="hobby" value="shopping"> Shopping
+    <input type="checkbox" name="hobby" value="football"> Football
+    <input type="checkbox" name="hobby" value="fishing"> Fishing<br>
+    <label>City</label>
+    <select name="city">
+        <option>--Select--</option>
+        <option value="DN">Đà Nẵng</option>
+        <option value="HCM">TP.HCM</option>
+        <option value="HN">Hà Nội</option>
+    </select><br>
+    <button type="submit">Send</button>
+    <button onclick="alert(document.getElementById('name').value)" type="button">Send2</button>
+    <input type="reset"/>
+</form>
+<table border="1" style="border-collapse: collapse">
+    <tr style="background-color: green; color: yellow">
+        <th>STT</th>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>092222</td>
+        <td>Chánh</td>
+    <tr>
+        <td>1</td>
+        <td>092222</td>
+        <td>Chánh</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>092222</td>
+        <td>Chánh</td>
+    </tr>
+</table>
+<table border="1" style="border-collapse: collapse">
+    <tr>
+        <th rowspan="2">STT</th>
+        <th rowspan="2">Tên môn học</th>
+        <th colspan="2">Điểm</th>
+    </tr>
+    <tr>
+        <th>Lý thuyết</th>
+        <th>Thực hành</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Java</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+</table>
+</body>
+</html>
