@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+    <style>
+        form {
+            background-color: white;
+            width: 500px;
+            padding: 20px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+        }
+
+        h1 {
+            background-color: orangered;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 0;
+        }
+
+        label {
+            color: darkblue;
+            font-weight: bold;
+            display: inline-block;
+            width: 90px;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 350px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin: 5px 5px 5px 0;
+        }
+        form input[type="checkbox"] + label,
+        form input[type="checkbox"] {
+            color: orangered;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+<form action="#" method="get">
+    <h1>SỞ THÍCH CỦA BẠN</h1>
+
+    <label for="name">Họ và tên </label>
+    <input type="text" name="name"><br/>
+    <label for="email">Email</label>
+    <input type="email" name="email"><br/>
+    <label> Sở thích </label><br/>
+    <input type="checkbox" name="hobby" value="sport"> Thể thao
+    <input type="checkbox" name="hobby" value="music"> Âm nhạc
+    <input type="checkbox" name="hobby" value="book"> Đọc sách
+    <input type="checkbox" name="hobby" value="game"> Chơi game
+    <input type="checkbox" name="hobby" value="cinema"> Điện ảnh
+    <input type="checkbox" name="hobby" value="tourism"> Du lịch <br/>
+    <button type="submit">Gửi Thông Tin</button>
+    <button type="reset">Nhập Lại</button>
+</form>
+</body>
+</html>
