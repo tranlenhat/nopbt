@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+
+    <h1>Tính Tồng Và Trung Bình</h1>
+    <label >Nhập Điểm Lý</label>
+    <input style="margin-left: 10px"  type="number" id="ly" step="0.01"><br/><br/>
+
+    <label >Nhập Điểm Hóa</label>
+    <input style="margin-left: 1px" type="number" id="hoa" step="0.01" ><br/><br/>
+
+    <label >Nhập Điểm Sinh</label>
+    <input type="number" id="sinh" step="0.01"><br/><br/>
+
+    <button onclick="diemTb()">Tính Tổng And Trung Bình</button>
+    <h1>Ket qua:</h1>
+    <p id="tong1"></p>
+    <p id="diemTb1"></p>
+
+
+</body>
+<script>
+    function diemTb(){
+        let ly = parseFloat(document.getElementById("ly").value) ;
+        let hoa = parseFloat(document.getElementById("hoa").value) ;
+        let sinh = parseFloat(document.getElementById("sinh").value) ;
+        let tong = (ly+hoa+sinh);
+        let tb=  tong/3;
+        document.getElementById("tong1").innerText= "Tong Diem:" + tong;
+        document.getElementById("diemTb1").innerText= "Diem trung binh:" + tb;
+    }
+</script>
+</html>
