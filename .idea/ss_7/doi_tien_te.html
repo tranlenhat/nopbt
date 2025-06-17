@@ -42,11 +42,6 @@
         let tuTien = document.getElementById("tuTienTe").value;
         let sangTien = document.getElementById("sangTienTe").value;
         let ketQua = 0;
-
-        if (isNaN(soTien)) {
-            document.getElementById("ketQua").innerText = "Vui lòng nhập số tiền hợp lệ.";
-            return;
-        }
         if (tuTien === sangTien) {
             ketQua = soTien;
         } else if (tuTien === "usd" && sangTien === "vnd") {
