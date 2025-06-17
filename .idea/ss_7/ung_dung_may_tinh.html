@@ -35,10 +35,6 @@
     function chia() {
         let num1 = parseFloat(document.getElementById("number1").value);
         let num2 = parseFloat(document.getElementById("number2").value);
-        if (num2 === 0) {
-            document.getElementById("ketQua").innerText = "Không thể chia cho 0!";
-            return;
-        }
         let result = num1 / num2;
         document.getElementById("ketQua").innerText = "Kết quả: " + result;
     }
