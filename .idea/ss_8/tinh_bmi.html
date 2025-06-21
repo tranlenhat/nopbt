@@ -8,7 +8,7 @@
 <script>
   let weight = parseFloat(+prompt("Nhập cân nặng của bạn"));
   let height = parseFloat(+prompt("Nhập chiều cao của bạn"));
-  let tinhBmi = weight / (height^2);
+  let tinhBmi = weight / (height);
   if(tinhBmi <18.5){
     alert(`Undereweight ${tinhBmi.toFixed(2)}`)
   }else if(tinhBmi <25.0){

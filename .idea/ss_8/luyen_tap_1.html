@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Bai1</title>
+    <title>Kiểm tra chia hết</title>
 </head>
 <body>
 <script>
-    let nhapa = parseFloat(+prompt("nhap a vao"));
-    let nhapb = parseFloat(+prompt("nhap b vao"));
-    if(nhapa/nhapb){
-        alert("pass");
-    }else {
-        alert("false");
+    let a = parseFloat(prompt("Nhập số a:"));
+    let b = parseFloat(prompt("Nhập số b:"));
+    if (b === 0) {
+        alert("Không thể chia cho 0");
+    } else if (a % b === 0) {
+        alert(`${a} chia hết cho ${b}`);
+    } else {
+        alert(`${a} không chia hết cho ${b}`);
     }
 </script>
 </body>
