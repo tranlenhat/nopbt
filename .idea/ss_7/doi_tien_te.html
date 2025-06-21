@@ -36,7 +36,7 @@
     </table>
     <p id="ketQua" style="font-weight: bold; color: green;"></p>
 </form>
-<script>
+<script >
     function chuyenDoi() {
         let soTien = parseFloat(document.getElementById("soTien").value);
         let tuTien = document.getElementById("tuTienTe").value;
@@ -49,8 +49,7 @@
         } else if (tuTien === "vnd" && sangTien === "usd") {
             ketQua = soTien / 23000;
         }
-        let donVi = sangTien === "vnd" ? "VND" : "USD";
-        document.getElementById("ketQua").innerText = "Kết quả: " + ketQua.toFixed(2) + " " + donVi;
+        document.getElementById("ketQua").innerText = "Kết quả: " + ketQua.toFixed(2) + " " ;
     }
 </script>
 </body>
