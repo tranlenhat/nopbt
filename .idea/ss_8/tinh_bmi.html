@@ -10,13 +10,13 @@
   let height = parseFloat(+prompt("Nhập chiều cao của bạn"));
   let tinhBmi = weight / (height^2);
   if(tinhBmi <18.5){
-    alert(`Undereweight ${tinhBmi}`)
+    alert(`Undereweight ${tinhBmi.toFixed(2)}`)
   }else if(tinhBmi <25.0){
-    alert(`Normal ${tinhBmi}`);
+    alert(`Normal ${tinhBmi.toFixed(2)}`);
   }else if(tinhBmi < 30.0){
-    alert(`Overweight ${tinhBmi}`);
+    alert(`Overweight ${tinhBmi.toFixed(2)}`);
   }else{
-    alert(`Obese ${tinhBmi}`);
+    alert(`Obese ${tinhBmi.toFixed(2)}`);
   }
 </script>
 </body>
