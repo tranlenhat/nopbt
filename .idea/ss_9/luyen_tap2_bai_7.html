@@ -2,15 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Giải phương trình bậc 2</title>
 </head>
 <body>
 <script>
-    let a = parseFloat(prompt("Nhập hệ số a:"));
-    let b = parseFloat(prompt("Nhập hệ số b:"));
-    let c = parseFloat(prompt("Nhập hệ số c:"));
-    if(a===0){
-        alert("Khong phai phuong tirnh bac 2(a oha")
+    let a = +prompt("Nhập a: ");
+    let b = +prompt("Nhập b: ");
+    let c = +prompt("Nhập c: ");
+    let delta = b ** 2 - 4 * a * c;
+    if (delta < 0) {
+        alert("Phương trình vô nghiệm");
+    } else if (delta == 0) {
+        let x = -b / (2 * a);
+        alert(`Phương trình có nghiệm kép: x = ${x}`);
+    } else {
+        let sqrtDelta = delta ** (1 / 2);
+        let x1 = (-b - sqrtDelta) / (2 * a);
+        let x2 = (-b + sqrtDelta) / (2 * a);
+        alert(`Phương trình có 2 nghiệm:x1 = ${x1} x2 = ${x2}`);
     }
 </script>
 </body>
