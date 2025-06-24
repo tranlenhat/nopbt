@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let doanhSo = parseFloat(+prompt("Nhap tien doanh thu "));
+  let hoaHong = 0;
+  if(doanhSo > 100){
+    hoaHong = doanhSo*0.10;
+  }else if(doanhSo > 50 ){
+    hoaHong = doanhSo*0.07;
+  }else if (doanhSo > 20){
+    hoaHong = doanhSo*0.05;
+  }else {
+    hoaHong = doanhSo*0.02;
+  }
+  alert(hoaHong);
+</script>
+</body>
+</html>

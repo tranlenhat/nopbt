@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Tam Giác Vuông</title>
+</head>
+<body>
+<script>
+    let x = parseFloat(prompt("Nhập cạnh x:"));
+    let y = parseFloat(prompt("Nhập cạnh y:"));
+    let z = parseFloat(prompt("Nhập cạnh z:"));
+    if (x > 0 && y > 0 && z > 0) {
+        if (x * x === y * y + z * z || z * z === x * x + y * y || y * y === x * x +z * z) {
+            alert("La tam giac vuong");
+        } else if (x+y>z && y+z>x && z+x>y) {
+            alert("chi laf 3 canh tam giac");
+        }else {
+            alert("Không phải là cạnh của 1 tam giác");
+        }
+    } else {
+        alert("Không phải là cạnh của 1 tam giác");
+    }
+</script>
+</body>
+</html>

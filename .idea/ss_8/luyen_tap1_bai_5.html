@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let kiemTra = parseFloat(+prompt("Nhap Diem Kiem Tra"));
+  let giuaKy = parseFloat(+prompt("Nhap Diem Kiem Tra Giua Ky"));
+  let cuoiKy = parseFloat(+prompt("Nhap Diem Kiem Tra Cuoi Ky"));
+  let diemTB = (kiemTra*0.2) + (giuaKy*0.3) + (cuoiKy*0.4);
+  if(diemTB >= 8.0){
+    alert("loai gioi");
+  }else if(diemTB >= 6.5){
+    alert("loai kha");
+  }else if (diemTB >= 4.0){
+    alert("loai trung binh");
+  }else {
+    alert("loai yeu");
+  }
+</script>
+</body>
+</html>
