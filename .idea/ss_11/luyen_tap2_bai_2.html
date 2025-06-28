@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Gia Thua</title>
+</head>
+<body>
+<script>
+    let x = +prompt("Nhập số nguyên dương để tính giai thừa:");
+    if (x < 0) {
+        alert("Vui lòng nhập số nguyên dương hợp lệ.");
+    } else {
+        let result = 1;
+        for (let i = 2; i <= x; i++) {
+            result *= i;
+        }
+        alert(result);
+    }
+</script>
+</body>
+</html>

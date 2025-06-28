@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let fn1 = 0, fn2 = 1;
+  let fn;
+
+  for (let i = 3; i <= 20; i++) {
+    fn = fn1 + fn2;
+    if (fn % 5 === 0) {
+      break;
+    }
+    fn1 = fn2;
+    fn2 = fn;
+  }
+
+  document.getElementById("result").innerText = "Số Fibonacci đầu tiên chia hết cho 5 là: " + fn;
+</script>
+</script>
+</body>
+</html>

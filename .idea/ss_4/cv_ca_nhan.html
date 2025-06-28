@@ -1,15 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Nhất Trần</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CV Cá Nhân - Trần Văn A</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            color: #333;
+        }
+
+        header {
+            background-color: #00264d;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            margin-bottom: 15px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #00264d;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .skill {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-weight: bold;
+        }
+
+        .skill-bar {
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 20px;
+        }
+
+        .skill-level {
+            height: 100%;
+            text-align: right;
+            padding-right: 10px;
+            line-height: 20px;
+            color: white;
+            background: linear-gradient(to right, #007acc, #005f99);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #00264d;
+            color: white;
+            font-size: 14px;
+        }
+
+        a {
+            color: #005f99;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-<h1>CV Trần Lê Nhất</h1>
-<img src="anh.jpg" with="300" height="300">
-<p>Họ và Tên : Trần Lê Nhất</p>
-<p>Quê quán  : Đà Nẵng </p>
-<p>Trình độ  : Đại học</p>
+
+<header>
+    <img  alt="Ảnh đại diện">    <h1 id="name">Trần Lê Nhất</h1>
+    <p id="job">Fullstack Developer | React - NodeJS</p>
+</header>
+
+<section>
+    <h2>Giới thiệu</h2>
+    <p id="about">
+        Tôi là một lập trình viên đam mê công nghệ, có kinh nghiệm xây dựng ứng dụng web hiện đại với React, Node.js, và cơ sở dữ liệu MongoDB. Tôi luôn hướng tới việc tối ưu hiệu suất và trải nghiệm người dùng.
+    </p>
+</section>
+
+<section>
+    <h2>Kỹ năng</h2>
+    <div id="skills">
+        <!-- Kỹ năng sẽ được thêm bằng JS -->
+    </div>
+</section>
+
+<section>
+    <h2>Học vấn</h2>
+    <ul id="education">
+        <!-- Học vấn sẽ thêm bằng JS -->
+    </ul>
+</section>
+
+<section>
+    <h2>Liên hệ</h2>
+    <p>Email: <a href="mailto:tranvana@example.com" id="email">tranvana@example.com</a></p>
+    <p>Điện thoại: <span id="phone">0123 456 789</span></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/tranvana" target="_blank">linkedin.com/in/tranvana</a></p>
+</section>
+
+<footer>
+    © 2025 - Thiết kế bởi Trần Văn A
+</footer>
+
+<script>
+    const skills = [
+        { name: "HTML", level: 90 },
+        { name: "CSS", level: 85 },
+        { name: "JavaScript", level: 95 },
+        { name: "React", level: 90 },
+        { name: "Node.js", level: 80 }
+    ];
+
+    const skillsContainer = document.getElementById("skills");
+    skills.forEach(skill => {
+        const skillDiv = document.createElement("div");
+        skillDiv.classList.add("skill");
+        skillDiv.innerHTML = `
+      <div class="skill-name">${skill.name}</div>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: ${skill.level}%;">${skill.level}%</div>
+      </div>
+    `;
+        skillsContainer.appendChild(skillDiv);
+    });
+
+    const educationList = [
+        "Đại học Bách Khoa TP.HCM – Ngành Khoa học Máy tính (2021 - 2025)",
+        "THPT Chuyên Lê Hồng Phong – Khối A1"
+    ];
+    const educationContainer = document.getElementById("education");
+    educationList.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        educationContainer.appendChild(li);
+    });
+</script>
 
 </body>
 </html>
