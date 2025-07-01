@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [99, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let maxValue = arr[0];
+    let maxInder = 0;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > maxValue) {
+            maxValue = arr[i];
+            maxInder = i;
+        }
+    }
+    document.write(`Phan tu lon nhat ${maxValue} vi tri ${maxInder}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let array = new Array(10);
+  for (let i = 0; i < 10; i++) {
+    array[i] = +prompt(`Số nguyên thứ ${i + 1} là: `);
+  }
+  let V = +prompt("Nhập V: ");
+  for (let j = 9; j >= 0; j--)
+    if (V == array[j]) {
+      array.splice(j, 1);
+      array.push(0);
+    }
+
+  alert(array);
+</script>
+</body>
+</html>

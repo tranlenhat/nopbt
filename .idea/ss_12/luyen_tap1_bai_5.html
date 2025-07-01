@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhap Do Dai Mang: ");
+    let array = new Array(n);
+    let count = 0;
+    for (let i = 0; i < n; i++) {
+        array[i] = +prompt(`So Nguyen Thu ${i + 1} la: `);
+        if (array[i] < 0) {
+            count++;
+        }
+    }
+    alert(`Co ${count} so nguyen am trong mang`);
+</script>
+</body>
+</html>

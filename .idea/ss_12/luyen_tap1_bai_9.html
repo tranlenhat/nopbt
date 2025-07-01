@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = new Array(10);
+  let b = new Array(10);
+  for (let i = 0; i < 10; i++) {
+    a[i] = +prompt(`Nhập phần tử thứ ${i + 1} của mảng a:`);
+  }
+  for (let i = 0; i < 10; i++) {
+    b[i] = +prompt(`Nhập phần tử thứ ${i + 1} của mảng b:`);
+  }
+  let c = b.concat(a);
+  alert("Mảng c sau khi nối b và a:" + c.join(", "));
+</script>
+
+</body>
+</html>
