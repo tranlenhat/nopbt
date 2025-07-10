@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function giaiThua(n) {
+    let kq = 1;
+    for (let i = 2; i <= n; i++) {
+      kq *= i;
+    }
+    return kq;
+  }
+  let x = +prompt("Nhap mot so nguyen:");
+  let ketQua = giaiThua(x);
+  alert("Giai thua cua " + x + " la: " + ketQua);
+</script>
+</body>
+</html>

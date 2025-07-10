@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class NhietDo {
+        constructor(doC) {
+            this.doC = doC;
+        }
+        get doF() {
+            return this.doC * 1.8 + 32;
+        }
+        get doK() {
+            return this.doC + 273.15;
+        }
+    }
+    let temp = new NhietDo(25);
+    alert(temp.doF + " độ F");
+    alert(temp.doK + " độ K");
+</script>
+
+</body>
+</html>
