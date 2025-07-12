@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="500" style="border: 1px solid green"></canvas>
+<p id="result"></p>
+<script>
+    class Rectangle {
+        constructor(width, length) {
+            this.width = width;
+            this.length = length;
+        }
+        // setter
+        setWidth(width){
+            this.width = width;
+        }
+        setLength(length){
+            this.length = length
+        }
+        // getter
+        getWidth() {
+            return this.width;
+        }
+
+        getLength() {
+            return this.length;
+        }
+        // pt tính diện tích
+        getArea(){
+            return this.width *this.length;
+        }
+        getPerimeter(){
+            return (this.width+this.length)*2;
+        }
+        showRectangle (x,y,color){
+            const canvas = document.getElementById("canvas");
+            let context = canvas.getContext("2d");
+            context.fillStyle=color;
+            context.fillRect(x,y,this.width,this.length);
+        }
+
+    }
+    let rectangle1 = new Rectangle(50, 100);
+    let rectangle2 = new Rectangle(100, 50);
+    let rectangle3 = new Rectangle(200, 200);
+
+    // rectangle1.width =10; // khong duoc
+    rectangle1.setWidth(10);
+    alert(rectangle1.getWidth());
+
+    rectangle2.showRectangle(0,0,'red')
+
+    rectangle1.showRectangle(100,50, "blue");
+    rectangle3.showRectangle(200,200,"yellow")
+
+    document.write("dien tich: "  + rectangle1.getArea()+"chu vi: "  + rectangle1.getPerimeter());
+
+
+</script>
+</body>
+</html>
+</body>
+</html>
