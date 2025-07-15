@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTraMang(arr) {
+        var coChan = false;
+        var coLe = false;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                coChan = true;
+            } else {
+                coLe = true;
+            }
+            if (coChan && coLe) {
+                return -1;
+            }
+        }
+        if (coChan) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+    alert(kiemTraMang([1, 2, 9, 4]));
+</script>
+</body>
+</html>

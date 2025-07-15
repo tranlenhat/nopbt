@@ -10,7 +10,6 @@
 <input id="name" placeholder="Nhập tên sản phẩm"/>
 <input id="price" placeholder="Nhập giá sản phẩm"/>
 <button onclick="themSanPham()">Thêm sản phẩm</button>
-
 <p id="soLuong"></p>
 <p id="hienThi"></p>
 
@@ -81,7 +80,6 @@
 
         hienThiDanhSach(danhSachSanPham);
     }
-
     function suaSanPham(index) {
         let tenMoi = prompt("Nhập tên mới:", danhSachSanPham[index].ten);
         let giaMoi = +prompt("Nhập giá mới:", danhSachSanPham[index].gia);
@@ -90,7 +88,6 @@
             alert("Thông tin không hợp lệ.");
             return;
         }
-
         danhSachSanPham[index].ten = tenMoi;
         let ok = danhSachSanPham[index].setGia(giaMoi);
         if (ok) {
