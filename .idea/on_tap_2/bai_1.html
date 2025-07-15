@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function nhapMang() {
+        let n = +prompt("Nhap So Luong Phan Tu");
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = +prompt("Nhap Phan Tu Thu " + (i + 1));
+        }
+        for (let i = 0; i < arr.length; i++) {
+            alert(`Mang Vua Nhap La : ${arr} `);
+            return arr;
+        }
+        return arr;
+    }
+    function doiXung(mang) {
+        for (let i = 0; i < mang.length / 2; i++) {
+            if (mang[i] !== mang[mang.length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    let mang = nhapMang();
+    if (doiXung(mang)) {
+        alert("OK");
+    } else {
+        alert("NO");
+    }
+</script>
+</body>
+</html>
