@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTraMang(arr) {
+        let demChan = 0;
+        let demLe = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                demChan++;
+            } else {
+                demLe++;
+            }
+        }
+
+        if (demChan === arr.length) {
+            return 1;
+        } else if (demLe === arr.length) {
+            return 0;
+        } else {
+            return -1;
+        }
+    }
+    alert(kiemTraMang([0, 2, 8, 12, 4]));
+    alert(kiemTraMang([1, 2, 9, 4]));
+</script>
+</body>
+</html>

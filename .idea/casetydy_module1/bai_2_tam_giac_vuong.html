@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = +prompt("Nhap x");
+    let y = +prompt("Nhap y");
+    let z = +prompt("Nhap z")
+    checkTriangle(x, y, z);
+    function checkTriangle(x, y, z) {
+        if (x > 0 && y > 0 && z > 0) {
+            if (x * x === y * y + z * z || y * y === x * x + z * z || z * z === x * x + y * y) {
+                alert("la 3 canh cua tam giac ");
+            } else if (x + y > z && y + z > x && x + z > y) {
+                alert("chi la 3 canh cua tam giac");
+            } else {
+                alert("khong phai la 1 canh cua tam giacs");
+            }
+        } else {
+            alert("khong phai la 1 canh cua tam giac");
+        }
+    }
+</script>
+</body>
+</html>

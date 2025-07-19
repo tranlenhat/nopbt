@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let y = prompt("nhập vào phân số");
+    find(y);
+    function find(x) {
+        let array = x.split("/");
+        if (array.length === 2) {
+            // có thể là phân số
+            if (!isNaN(array[0]) && !isNaN(array[1]) && array[1] != 0) {
+                alert("là phân số");
+
+                let uocChungLN= timUCLN(array[0],array[1]);
+                if (array[0]%array[1]==0){
+                    alert("kết quả rut gọn là một số: " +array[0]/array[1])
+                }else {
+                    alert("phân số tối giản :" + array[0]/uocChungLN +"/"+ array[1]/uocChungLN);
+                }
+
+            } else {
+                alert("không phải là phân số");
+            }
+        } else {
+            alert("không phải là phân số");
+        }
+
+    }
+    function timUCLN (a,b){
+        let uocChung =1;
+        if (a<b){
+            for (let i = 0; i <=a ; i++) {
+                if (a%i===0&&b%i===0){
+                    uocChung = i;
+                }
+            }
+        }else {
+            for (let i = 0; i <=b ; i++) {
+                if (a%i===0&&b%i===0){
+                    uocChung = i;
+                }
+            }
+        }
+        return uocChung;
+    }
+</script>
+</body>
+</html>

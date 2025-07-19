@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra mảng đối xứng</title>
+</head>
+<body>
+<script>
+    function nhapMang() {
+        let n;
+        do {
+            n = +prompt("Nhập độ dài của mảng (1 - 20):");
+        } while (n <= 0 || n > 20 || n % 1 !== 0);
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = +prompt("Nhập phần tử thứ " + (i + 1));
+        }
+        alert("Mảng vừa nhập là: " + arr);
+        return arr;
+    }
+
+    function doiXung(mang) {
+        for (let i = 0; i < mang.length / 2; i++) {
+            if (mang[i] !== mang[mang.length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let mang = nhapMang();
+    if (doiXung(mang)) {
+        alert("Mảng là đối xứng (OK)");
+    } else {
+        alert("Mảng không đối xứng (NO)");
+    }
+</script>
+</body>
+</html>
