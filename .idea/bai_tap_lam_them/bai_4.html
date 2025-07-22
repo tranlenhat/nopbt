@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Bạ</title>
+</head>
+<body>
+<h2>Danh Bạ Điện Thoại</h2>
+<p id="hienThi"></p>
+<script>
+    class DanhBa {
+        constructor(stt, sdt, tenchu, diachi) {
+            this.stt = stt;
+            this.sdt = sdt;
+            this.tenchu = tenchu;
+            this.diachi = diachi;
+        }
+    };
+
+    let danhBa = [
+        new DanhBa(1, "0985732619", "TranLeNhat", "Dn"),
+        new DanhBa(2, "0985732620", "TranLeHoang", "Hn"),
+        new DanhBa(3, "0985732621", "NguyenVanAn", "Gl")
+    ];
+
+    function hienThiDanhBa(db) {
+        let bang = `<table border="1" cellpadding="10" style="border-collapse: collapse;">
+        <tr>
+           <th>Stt</th>
+           <th>Số Điện Thoại</th>
+           <th>Tên Chủ Danh Bạ</th>
+           <th>Địa Chỉ</th>
+           <th>Xóa</th>
+        </tr>`;
+
+        for (let i = 0; i < db.length; i++) {
+            bang += `
+            <tr>
+               <td>${i + 1}</td>
+               <td>${db[i].sdt}</td>
+               <td>${db[i].tenchu}</td>
+               <td>${db[i].diachi}</td>
+               <td><button onclick="xoaDanhBa(${i})">Xóa</button></td>
+            </tr>`;
+        }
+
+        bang += `</table>`;
+        document.getElementById("hienThi").innerHTML = bang;
+    }
+
+    function xoaDanhBa(index) {
+        let xacNhan = confirm(`Bạn có chắc muốn xóa sdt: ${danhBa[index].sdt} hay không?`);
+        if (xacNhan) {
+            danhBa.splice(index, 1);
+            hienThiDanhBa(danhBa);
+        }
+    }
+
+    hienThiDanhBa(danhBa);
+</script>
+</body>
+</html>

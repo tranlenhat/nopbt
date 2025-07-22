@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhap So Luong Phan Tu La Boi Cua 3:");
+    } while (n <= 0 || n > 15 || n % 3 !== 0);
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập phần tử thứ " + i+1 + ":");
+    }
+    alert("Mảng đã nhập: " + arr);
+
+    function tamGiacVuong(a, b, c) {
+        if (a <= 0 || b <= 0 || c <= 0)
+            return false;
+        if (a + b <= c || a + c <= b || b + c <= a)
+            return false;
+        if (
+            a * a === b * b + c * c || b * b === a * a + c * c || c * c === a * a + b * b
+        ) {
+            return true;
+        }
+        return false;
+    }
+
+    let array = true;
+
+    for (let i = 0; i < n; i += 3) {
+        let a = arr[i];
+        let b = arr[i + 1];
+        let c = arr[i + 2];
+        if (!tamGiacVuong(a, b, c)) {
+            array = false;
+            break;
+        }
+    }
+
+    if (array) {
+        alert("OK");
+    } else {
+        alert("NO");
+    }
+</script>
+</body>
+</html>

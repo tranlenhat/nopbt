@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function vietTat(chuoi) {
+        while (chuoi[0] === " ") {
+            chuoi = chuoi.slice(1);
+        }
+        while (chuoi[chuoi.length - 1] === " ") {
+            chuoi = chuoi.slice(0, -1);
+        }
+        let tu = chuoi.split(/\s+/);
+
+        if (tu.length === 1) {
+            return "Chuỗi chỉ có 1 từ nên không cần viết tắt";
+        }
+
+        let vietTat = "";
+        for (let i = 0; i < tu.length; i++) {
+            vietTat += tu[i][0].toUpperCase();
+        }
+
+        return vietTat;
+    }
+
+    alert(vietTat("  object    Oriented   programming   ")); // OOP
+    alert(vietTat("ObjectOriented")); // Chuỗi chỉ có 1 từ nên không cần viết tắt
+</script>
+</body>
+</html>
