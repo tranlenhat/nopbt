@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function manhKyTu(mang) {
+        let so = 0;
+        let chu = 0;
+
+        for (let i = 0; i < mang.length; i++) {
+            let phantu = mang[i];
+            if (!isNaN(phantu) && phantu !== " ") {
+                so++;
+            } else if (typeof phantu === "string" && isNaN(phantu)) {
+                chu++;
+            }
+        }
+        if (so > 0 && chu === 0) return 1;      // Chỉ có số
+        else if (chu > 0 && so === 0) return 0; // Chỉ có chữ
+        else return -1;                         // Cả số và chữ
+    }
+</script>
+
+</body>
+</html>

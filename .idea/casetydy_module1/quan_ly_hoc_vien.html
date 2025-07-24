@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý học viên CODEGYM</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 6px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    button {
+      margin: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Danh sách học viên</h2>
+<button onclick="themHocVien()">Thêm mới học viên</button>
+<button onclick="suaHocVien()">Sửa thông tin học viên</button>
+<button onclick="xoaHocVien()">Xóa học viên</button>
+
+<table id="bangHocVien">
+  <thead>
+  <tr>
+    <th>Mã học viên</th>
+    <th>Tên</th>
+    <th>Lớp</th>
+    <th>Email</th>
+    <th>Ngày sinh</th>
+  </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+  let hocViens = [
+    {ma: "HV-0001", ten: "Nguyễn Văn A", lop: "C1122G1", email: "nguyenvana@gmail.com", ngaysinh: "2004/01/01"},
+    {ma: "HV-0002", ten: "Nguyễn Văn B", lop: "C1122G1", email: "nguyenvanb@gmail.com", ngaysinh: "2004/02/02"},
+    {ma: "HV-0003", ten: "Nguyễn Thị C", lop: "C1122G1", email: "nguyenthic@gmail.com", ngaysinh: "2004/03/04"},
+  ];
+
+  function hienThiDanhSach() {
+    let tbody = document.querySelector("#bangHocVien tbody");
+    tbody.innerHTML = "";
+    for (let hv of hocViens) {
+      let row = `<tr>
+                    <td>${hv.ma}</td>
+                    <td>${hv.ten}</td>
+                    <td>${hv.lop}</td>
+                    <td>${hv.email}</td>
+                    <td>${hv.ngaysinh}</td>
+                   </tr>`;
+      tbody.innerHTML += row;
+    }
+  }
+
+  function themHocVien() {
+    let ma = prompt("Nhập mã học viên (dạng HV-XXXX):");
+    if (!/^HV-\d{4}$/.test(ma)) {
+      alert("Mã không đúng định dạng!");
+      return;
+    }
+    if (hocViens.some(hv => hv.ma === ma)) {
+      alert("Mã học viên đã tồn tại!");
+      return;
+    }
+
+    let ten = prompt("Nhập tên học viên:");
+    if (!ten || ten.length > 50) {
+      alert("Tên học viên không hợp lệ!");
+      return;
+    }
+
+    let lop = prompt("Nhập lớp học:");
+    let email = prompt("Nhập email:");
+    let ngaysinh = prompt("Nhập ngày sinh (yyyy/mm/dd):");
+    if (!/^\d{4}\/\d{2}\/\d{2}$/.test(ngaysinh)) {
+      alert("Ngày sinh không đúng định dạng!");
+      return;
+    }
+
+    hocViens.push({ma, ten, lop, email, ngaysinh});
+    hienThiDanhSach();
+  }
+
+  function suaHocVien() {
+    let ma = prompt("Nhập mã học viên cần sửa:");
+    let index = hocViens.findIndex(hv => hv.ma === ma);
+    if (index === -1) {
+      alert("Mã học viên không tồn tại!");
+      return;
+    }
+
+    let ten = prompt("Nhập tên mới:", hocViens[index].ten);
+    let lop = prompt("Nhập lớp mới:", hocViens[index].lop);
+    let email = prompt("Nhập email mới:", hocViens[index].email);
+    let ngaysinh = prompt("Nhập ngày sinh mới (yyyy/mm/dd):", hocViens[index].ngaysinh);
+
+    hocViens[index] = {ma, ten, lop, email, ngaysinh};
+    hienThiDanhSach();
+  }
+
+  function xoaHocVien() {
+    let ma = prompt("Nhập mã học viên cần xóa:");
+    let index = hocViens.findIndex(hv => hv.ma === ma);
+    if (index === -1) {
+      alert("Mã học viên không tồn tại!");
+      return;
+    }
+
+    if (confirm("Bạn có chắc chắn muốn xóa học viên này không?")) {
+      hocViens.splice(index, 1);
+      hienThiDanhSach();
+    }
+  }
+
+  hienThiDanhSach();
+</script>
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>-</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        str = str.toLowerCase();
+        let result = [];
+        let nguyenAm = ['a', 'e', 'i', 'o', 'u'];
+
+        for (let char of str) {
+            if (nguyenAm.includes(char) && !result.includes(char)) {
+                result.push(char);
+            }
+        }
+        return result;
+    }
+    alert(checkString("abcdRF"));
+
+</script>
+
+</body>
+</html>

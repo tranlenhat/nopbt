@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Quản lý sản phẩm</h2>
+<input id="id" placeholder="Nhập mã sản phẩm"/>
+<input id="madt" placeholder="Nhập mã điện thoại"/>
+<input id="ten" placeholder="Nhập tên sản phẩm"/>
+<input id="hang" placeholder="Nhập hãng sản xuất"/>
+<input id="gia" placeholder="Nhập giá sản phẩm"/>
+<button onclick="themSanPham()">Thêm sản phẩm</button>
+<p id="soLuong"></p>
+<p id="hienThi"></p>
+
+<script>
+    class SanPham {
+        constructor(#id, #madt, #ten, #hangsx, #gia) {
+            this.id = id;
+            this.madt = madt;
+            this.ten = ten;
+            this.hangsx = hangsx;
+            this.gia = gia;
+        }
+    }
+
+
+    let danhSachSanPham = [
+        new SanPham(1, 1, "Iphone 11", "Apple", 1000),
+        new SanPham(2, 2, "Iphone 12", "Apple", 1200),
+        new SanPham(3, 3, "Iphone 13", "Apple", 1300),
+        new SanPham(4, 4, "Iphone 14", "Apple", 1500)
+    ];
+
+    function hienThiDanhSach(ds) {
+        let bang = `<table border="1" cellpadding="10" style="border-collapse: collapse;">
+            <tr>
+                <th>Id</th>
+                <th>Mã ĐT</th>
+                <th>Tên Sản Phẩm</th>
+                <th>Hãng Sản Xuất</th>
+                <th>Giá</th>
+            </tr>`;
+
+        for (let i = 0; i < ds.length; i++) {
+            bang += `
+                <tr>
+                    <td>${ds[i].id}</td>
+                    <td>${ds[i].madt}</td>
+                    <td>${ds[i].ten}</td>
+                    <td>${ds[i].hangsx}</td>
+                    <td>${ds[i].gia}</td>
+                </tr>`;
+        }
+
+        bang += `</table>`;
+        document.getElementById('hienThi').innerHTML = bang;
+        document.getElementById('soLuong').innerText = `Tổng số sản phẩm: ${ds.length}`;
+    }
+
+    function themSanPham() {
+        let id = +document.getElementById("id").value;
+        let madt = +document.getElementById("madt").value;
+        let ten = document.getElementById("ten").value.trim();
+        let hang = document.getElementById("hang").value.trim();
+        let gia = +document.getElementById("gia").value;
+
+        if (!id || !madt || !ten || !hang || !gia || gia <= 0 || isNaN(gia)) {
+            alert("Vui lòng điền đầy đủ và hợp lệ thông tin sản phẩm.");
+            return;
+        }
+
+        for (let sp of danhSachSanPham) {
+            if (sp.id === id) {
+                alert("ID sản phẩm đã tồn tại. Vui lòng nhập ID khác.");
+                return;
+            }
+        }
+
+        let spMoi = new SanPham(id, madt, ten, hang, gia);
+        danhSachSanPham.push(spMoi);
+        document.getElementById("id").value = "";
+        document.getElementById("madt").value = "";
+        document.getElementById("ten").value = "";
+        document.getElementById("hang").value = "";
+        document.getElementById("gia").value = "";
+
+        hienThiDanhSach(danhSachSanPham);
+    }
+    hienThiDanhSach(danhSachSanPham);
+
+</script>
+</body>
+</html>
