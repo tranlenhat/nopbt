@@ -1,37 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Lọc Số Nguyên Tố</title>
 </head>
 <body>
 <script>
     function laSoNguyenTo(n) {
         if (n < 2) return false;
-        for (let i = 2; i <= Math.sqrt(n); i++) {
+        for (let i = 2; i <= n / 2; i++) {
             if (n % i === 0) return false;
         }
         return true;
     }
 
-    function laySoNguyenTo(mang) {
-        let ketQua = [];
-        for (let i = 0; i < mang.length; i++) {
-            if (laSoNguyenTo(mang[i])) {
-                ketQua.push(mang[i]);
-            }
-        }
-        return ketQua;
-    }
-
     let mang = [1, 5, 6, 23, 8, 47, 10, 3];
-    let ketQua = laySoNguyenTo(mang);
 
+    let ketQua = [];
+    for (let i = 0; i < mang.length; i++) {
+        if (laSoNguyenTo(mang[i])) {
+            ketQua.push(mang[i]);
+        }
+    }
     ketQua.sort(function (a, b) {
         return a - b;
     });
 
-    alert(ketQua);
+    alert("Các số nguyên tố tăng dần là: " + ketQua.join(", "));
 </script>
 </body>
 </html>
